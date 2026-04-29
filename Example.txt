@@ -1,3 +1,5 @@
+// To see more Details, please reference to dev4
+
 (Ex)Create a new repository on the command line
 
 echo "# Git_functions_trying" >> README.md
@@ -46,3 +48,5 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
         modified:   instructions.txt
+
+
