@@ -1,0 +1,55 @@
+Git Cheat Sheet & Operations Guide
+
+(1) Create Repo from Git File
+Initialize a new local repository or copy an existing one from a remote server.
+git init: Initializes a new, empty Git repository in the current directory.
+
+git clone [URL]: Downloads a project and its entire version history from a remote URL (e.g., GitHub or GitLab).
+
+(2) Remote Synchronization (Fetch vs. Pull)
+Manage the connection between your local environment and the remote repository.
+
+git fetch: Downloads objects and refs from another repository. It lets you see what others have worked on without merging those changes into your local files.
+git pull: Fetches the data from the remote and immediately attempts to merge it into your current local branch.
+
+Note: git pull is essentially git fetch followed by git merge.
+
+(3) Branching & Switching
+
+Use branches to isolate development work without affecting the main codebase.
+
+git branch [branch-name]: Creates a new branch at the current commit.
+git checkout [branch-name]: Switches your working directory to the specified branch.
+Shortcut: git checkout -b [branch-name] creates a new branch and switches to it instantly.
+git merge [branch-name]: Combines the specified branch’s history into your current branch.
+
+(4) Visualizing History in VS Code
+While the command line is powerful, visualizing the "Git Tree" helps track complex merges and branch structures.
+
+Extension Recommended: Git Graph
+
+How to use it:
+
+Open VS Code and go to the Extensions view (Ctrl+Shift+X).
+Search for and install "Git Graph".
+Once installed, click the Git Graph icon in the bottom status bar or the icon at the top of your Source Control view.
+Interface Features:
+
+Commit History: View a color-coded tree of all branches and merges.
+Details: Click a commit to see modified files and code diffs.
+Actions: Right-click on a branch or commit to perform actions like merge, rebase, or tag directly from the UI.
+
+(5) Common Daily Workflow
+A typical sequence for saving your work:
+
+git status: Check which files are modified.
+git add .: Stage all changes for the next commit.
+git commit -m "Your descriptive message": Record your changes to the version history.
+git push origin [branch-name]: Upload your local commits to the remote server.
+
+
+
+
+git remote add origin https://github.com/Physicsphotonmodel/Git_functions_trying.git
+git branch -M main
+git push -u origin main

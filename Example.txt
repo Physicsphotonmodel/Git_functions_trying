@@ -1,0 +1,48 @@
+(Ex)Create a new repository on the command line
+
+echo "# Git_functions_trying" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Physicsphotonmodel/Git_functions_trying.git
+git push -u origin main
+
+這是在創建一個名為 README.md 的檔案，並在裡面寫入 # Git_functions_trying 這行文字（通常作為專案的標題）。
+初始化：在目前的資料夾建立一個隱藏的 .git 資料夾，讓 Git 開始追蹤這個目錄下的檔案變動。
+提交存檔：將暫存區的變動正式記錄到 Git 的歷史紀錄中。-m 後面接的是這次提交的說明訊息（此處為 "first commit"）。
+重新命名分支：將預設的分支名稱（通常是 master）強制重新命名為 main。這是目前 GitHub 推薦的預設主分支名稱。
+設定遠端路徑：將這個本地倉庫連結到 GitHub 上的遠端儲存庫。origin 是這串網址的代稱（縮寫）。
+上傳並關聯：將本地的 main 分支內容推送到遠端的 origin。
+-u 指的是 Upstream（上游），設定後未來只需輸入 git push 或 git pull，Git 就會自動知道要對應到遠端的 main 分支。
+
+(Ex) Add new codes to git
+
+git add .
+git commit -m "update message"
+git push
+
+加入所有變動：將目前目錄下「所有」新增、修改或刪除的檔案全部加入暫存區（Staging Area）。最後的句點 . 代表當前路徑。
+提交更新：將暫存區中的變動封裝成一個新的節點，並加入開發歷史中。建議在 -m 後的對話框寫下具體的修改內容（例如：fix: button style）。
+推送到雲端：將本地端新建立的提交（Commits）上傳到遠端儲存庫（如 GitHub）。由於之前已設定過 -u，這裡不需再輸入分支名稱。
+
+(Ex) Check repository status
+
+git status
+git log --oneline
+
+檢查狀態：查看目前哪些檔案已被修改但尚未暫存，以及哪些檔案已在暫存區準備好要提交。這是開發過程中最常使用的確認指令。
+檢視簡短歷史：以一行一則的方式列出過去的提交紀錄，讓你快速確認目前的版本位置與編號（Commit ID）。
+
+
+(Ex) The messages from git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   instructions.txt
+        new file:   try.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   instructions.txt
