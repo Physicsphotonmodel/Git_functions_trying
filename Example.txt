@@ -20,7 +20,7 @@ git push -u origin main
 
 git add .
 git commit -m "update message"
-git push
+git push --set-upstream origin dev4 -->  "dev4" is a branch name
 
 加入所有變動：將目前目錄下「所有」新增、修改或刪除的檔案全部加入暫存區（Staging Area）。最後的句點 . 代表當前路徑。
 提交更新：將暫存區中的變動封裝成一個新的節點，並加入開發歷史中。建議在 -m 後的對話框寫下具體的修改內容（例如：fix: button style）。
@@ -52,37 +52,29 @@ git stash pop
 將目前尚未 commit 的變動暫存到一個秘密口袋。
 之後想拿回來時再彈出來。
 
-(Ex) The messages from git status
+(Ex) The Standard 3-Step Workflow
 
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   instructions.txt
-        new file:   try.py
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   instructions.txt
+git add hello.cpp
+git commit -m "feat: add hello world script"
+git log --oneline
 
-(Ex) The messages from git commit
-     
-     3 files changed, 104 insertions(+)
-     create mode 100644 Example.txt
-     create mode 100644 instructions.txt
-     create mode 100644 try.py
+(git commit --amend -m "") --> 修改上一次的回答
 
-(Ex) The messages from git push
+準備檔案：先將檔案加入暫存區。
+正式提交：加上 -m 參數並寫下訊息。
+確認紀錄：查看是否成功產生了一個新的 Commit。
 
-    Enumerating objects: 6, done.
-    Counting objects: 100% (6/6), done.
-    Delta compression using up to 12 threads
-    Compressing objects: 100% (4/4), done.
-    Writing objects: 100% (5/5), 2.96 KiB | 2.96 MiB/s, done.
-    Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-    To https://github.com/Physicsphotonmodel/Git_functions_trying.git
-    39d59bc..8a5e924  main -> main
+(Ex)Wrong Message 1
 
-(Ex)The messages from git log --oneline
+error: Your local changes to the following files would be overwritten by checkout:
+        Example.txt
+    Please commit your changes or stash them before you switch branches.
+    Aborting
 
-    8a5e924 (HEAD -> main, origin/main) this version has update a python code
-    39d59bc first commit
+    代表建立在main之上的dev4不能和main有內容衝突，現在還留在dev4
+
+    --->修改方式
+        (1)直接存檔 ==> git add --> git commit -M
+        (2)先藏起來不理他 ==> git stash ==> git checkout --> git stash pop
+        (3)直接忽略剛剛改過的所有東西 ==> git checkout -- Example.txt 
