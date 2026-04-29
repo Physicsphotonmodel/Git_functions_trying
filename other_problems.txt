@@ -1,0 +1,4 @@
+(1) enter wsl in bash to activate wsl
+    enter exit to log out
+
+(2)

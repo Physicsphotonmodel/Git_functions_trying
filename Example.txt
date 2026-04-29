@@ -34,6 +34,23 @@ git log --oneline
 檢查狀態：查看目前哪些檔案已被修改但尚未暫存，以及哪些檔案已在暫存區準備好要提交。這是開發過程中最常使用的確認指令。
 檢視簡短歷史：以一行一則的方式列出過去的提交紀錄，讓你快速確認目前的版本位置與編號（Commit ID）。
 
+(Ex) Create and switch to a new branch
+
+git branch dev
+git checkout dev
+git checkout -b feature-login
+
+建立新分支：創建一個名為 dev 的新分支，但目前仍會停留在原本的分支上。這就像是從當前的進度點拉出一條新的平行線。
+切換分支：將工作目錄切換到 dev 分支。接下來你所做的任何修改和提交，都只會記錄在這個分支上，不會影響到 main。
+建立並直接切換：這是最常用的快捷指令。它會同時完成「建立分支」與「切換過去」兩個動作。範例中的 feature-login 是分支名稱。
+
+(Ex) Stash (如果你發現帶過來的變動會造成混亂，想先把它「藏起來」，可以使用)
+
+git stash
+git stash pop
+
+將目前尚未 commit 的變動暫存到一個秘密口袋。
+之後想拿回來時再彈出來。
 
 (Ex) The messages from git status
 
@@ -46,3 +63,26 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
         modified:   instructions.txt
+
+(Ex) The messages from git commit
+     
+     3 files changed, 104 insertions(+)
+     create mode 100644 Example.txt
+     create mode 100644 instructions.txt
+     create mode 100644 try.py
+
+(Ex) The messages from git push
+
+    Enumerating objects: 6, done.
+    Counting objects: 100% (6/6), done.
+    Delta compression using up to 12 threads
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (5/5), 2.96 KiB | 2.96 MiB/s, done.
+    Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+    To https://github.com/Physicsphotonmodel/Git_functions_trying.git
+    39d59bc..8a5e924  main -> main
+
+(Ex)The messages from git log --oneline
+
+    8a5e924 (HEAD -> main, origin/main) this version has update a python code
+    39d59bc first commit
