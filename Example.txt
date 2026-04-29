@@ -65,7 +65,7 @@ git log --oneline
 正式提交：加上 -m 參數並寫下訊息。
 確認紀錄：查看是否成功產生了一個新的 Commit。
 
-(Ex)Wrong Message 1
+(Ex) Practical situation 1
 
 error: Your local changes to the following files would be overwritten by checkout:
         Example.txt
@@ -78,3 +78,30 @@ error: Your local changes to the following files would be overwritten by checkou
         (1)直接存檔 ==> git add --> git commit -M
         (2)先藏起來不理他 ==> git stash ==> git checkout --> git stash pop
         (3)直接忽略剛剛改過的所有東西 ==> git checkout -- Example.txt 
+
+
+(Ex) Practical Situation 2 : Understand Git Markers (HEAD, Branches, Remotes)
+
+fa3d653 (HEAD -> dev4) update Example.txt before switching branch
+4f6cdb3 (origin/dev4) Add a C++ file in branch dev4
+8a5e924 (origin/main, main) this version has update a python code
+39d59bc first commit
+
+HEAD 是目前的指針，代表你「現在」正處於哪一個 Commit。
+白話文：你現在眼睛看著的、工作目錄裡呈現的程式碼版本，就是 HEAD 所指的地方。
+在此範例中，(HEAD -> dev4) 表示你正站在 dev4 分支的最前端。
+
+dev4 / main
+
+本地分支名：這是你電腦上的分支標籤。
+分支位置：
+
+dev4 已經走到 fa3d653 這個版本了。
+main 還停留在 8a5e924 這個版本。
+origin/main / origin/dev4
+遠端分支名：origin/ 開頭代表 GitHub 伺服器上的進度。
+
+同步狀況檢查：
+origin/main 與你的本地 main 在同一個位置，代表你的 main 分支跟雲端同步。
+
+注意！ 你的本地 dev4 (在 fa3d653) 比 origin/dev4 (在 4f6cdb3) 領先了一個 commit。這代表你剛才做的存檔還沒 push 到 GitHub。
