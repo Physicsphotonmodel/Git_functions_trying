@@ -52,4 +52,4 @@ git push origin [branch-name]: Upload your local commits to the remote server.
 
 git remote add origin https://github.com/Physicsphotonmodel/Git_functions_trying.git
 git branch -M main
-git push -u origin main
+git push -u origin mainb
