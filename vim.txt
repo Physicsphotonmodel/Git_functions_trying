@@ -1,0 +1,22 @@
+當你輸入 git commit 而沒有加上 -m 時，Git 會自動開啟預設的文字編輯器（通常是 Vim），要求你輸入提交訊息。這就是你現在看到的畫面。ㄛ
+對初學者來說，Vim 的操作比較特殊。以下是如何完成提交並離開的步驟：
+
+(Ex) How to exit the Vim editor after commit
+1. 進入輸入模式
+
+按下鍵盤上的 i。
+你會看到左下角出現 -- INSERT --（插入），這時你就可以開始打字。
+
+2. 輸入提交訊息
+
+在第一行輸入你的訊息，例如：update Example.txt before switching branch。
+
+3. 退出輸入模式
+
+按下鍵盤左上角的 Esc 鍵。
+左下角的 -- INSERT -- 會消失。
+
+4. 儲存並離開
+
+輸入 :wq (注意有個冒號，代表 Write and Quit)。
+按下 Enter。
